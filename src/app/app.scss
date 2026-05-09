@@ -1,0 +1,202 @@
+@import 'tailwindcss';
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@300;400;500&display=swap');
+
+/* ─── Tailwind v4 Custom Theme ─── */
+@theme {
+  --color-primary: #64ffda;
+  --color-primary-dark: #00b4d8;
+
+  --color-dark-900: #0a0a0f;
+  --color-dark-800: #0f0f1a;
+  --color-dark-700: #1a1a2e;
+  --color-dark-600: #16213e;
+
+  --color-light-50: #f8fafc;
+  --color-light-100: #f1f5f9;
+  --color-light-200: #e2e8f0;
+  --color-light-300: #cbd5e1;
+
+  --font-sans: 'Inter', sans-serif;
+  --font-mono: 'Fira Code', monospace;
+}
+
+/* ─── Dark Mode Variables (default) ─── */
+:root {
+  --color-bg: #0a0a0f;
+  --color-surface: #0f0f1a;
+  --color-surface-2: #1a1a2e;
+  --color-border: rgba(100, 255, 218, 0.1);
+  --color-text: #ccd6f6;
+  --color-text-muted: #8892b0;
+  --color-primary: #64ffda;
+  --color-primary-dark: #00b4d8;
+  --grid-color: rgba(100, 255, 218, 0.03);
+}
+
+/* ─── Light Mode Variables ─── */
+.light-mode {
+  --color-bg: #f8fafc;
+  --color-surface: #ffffff;
+  --color-surface-2: #f1f5f9;
+  --color-border: rgba(0, 0, 0, 0.08);
+  --color-text: #1e293b;
+  --color-text-muted: #64748b;
+  --color-primary: #0891b2;
+  --color-primary-dark: #0e7490;
+  --grid-color: rgba(8, 145, 178, 0.04);
+}
+
+/* ─── Base Reset ─── */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: 'Inter', sans-serif;
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* ─── Global Grid Background ─── */
+.grid-background {
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-dark);
+}
+
+/* ─── Selection ─── */
+::selection {
+  background: var(--color-primary);
+  color: #0a0a0f;
+}
+
+/* ─── Utility Classes ─── */
+.text-primary {
+  color: var(--color-primary);
+}
+.text-muted {
+  color: var(--color-text-muted);
+}
+.bg-surface {
+  background: var(--color-surface);
+}
+.border-primary {
+  border-color: var(--color-border);
+}
+
+.section-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section-padding {
+  padding: 100px 0;
+}
+
+/* ─── Section Heading ─── */
+.section-heading {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+
+  span.number {
+    font-family: 'Fira Code', monospace;
+    color: var(--color-primary);
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  &::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--color-border);
+    max-width: 300px;
+  }
+}
+
+/* ─── Glass Card ─── */
+.glass-card {
+  background: rgba(15, 15, 26, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+}
+
+.light-mode .glass-card {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+/* ─── Primary Button ─── */
+.btn-primary {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.875rem;
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: transparent;
+  display: inline-block;
+
+  &:hover {
+    background: rgba(100, 255, 218, 0.1);
+    box-shadow: 0 0 20px rgba(100, 255, 218, 0.15);
+  }
+}
+
+/* ─── Reveal Animation Base ─── */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+
+  &.revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

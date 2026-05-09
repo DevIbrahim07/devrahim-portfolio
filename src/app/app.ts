@@ -1,12 +1,26 @@
-import { Component, signal } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, inject, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { SplashService } from './core/services/splash-service';
+import { SplashComponent } from './features/splash-component/splash-component';
+import { NavbarComponent } from './shared/components/navbar-component/navbar-component';
+import { HeroComponent } from './features/hero-component/hero-component';
+import { AboutComponent } from './features/about-component/about-component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [
+    RouterOutlet,
+    CommonModule,
+    SplashComponent,
+    NavbarComponent,
+    HeroComponent,
+    AboutComponent,
+  ],
   templateUrl: './app.html',
-  styleUrl: './app.scss'
+  styleUrl: './app.scss',
 })
 export class App {
-  protected readonly title = signal('angular-portfolio-ibrahim');
+  splash = inject(SplashService);
 }

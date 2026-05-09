@@ -1,0 +1,37 @@
+<div class="splash-screen">
+  <!-- Background Grid -->
+  <div class="splash-grid"></div>
+
+  <!-- Glow -->
+  <div class="splash-glow"></div>
+
+  <!-- Center Content -->
+  <div class="splash-content">
+    <!-- Logo / Name -->
+    <div class="splash-name-wrapper">
+      <span class="splash-bracket text-primary">&lt;</span>
+      <span class="splash-name">{{ displayText }}</span>
+      <span class="splash-cursor" [class.hide]="typingDone">|</span>
+      <span class="splash-bracket text-primary">/&gt;</span>
+    </div>
+
+    <!-- Tagline -->
+    <p class="splash-tagline">Full-Stack Developer</p>
+
+    <!-- Loading Bar -->
+    @if (showBar) {
+      <div class="splash-bar-wrapper">
+        <div class="splash-bar">
+          <div class="splash-bar-fill" [style.width.%]="progress"></div>
+        </div>
+        <span class="splash-percent font-mono">{{ progress | number: '1.0-0' }}%</span>
+      </div>
+    }
+  </div>
+
+  <!-- Corner Decorations -->
+  <div class="corner top-left"></div>
+  <div class="corner top-right"></div>
+  <div class="corner bottom-left"></div>
+  <div class="corner bottom-right"></div>
+</div>

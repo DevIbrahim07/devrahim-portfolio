@@ -1,0 +1,98 @@
+<section id="about" class="about-section" #aboutSection>
+  <div class="section-container">
+    <!-- Heading -->
+    <h2 class="section-heading about-heading">
+      <!-- <span class="number">01.</span> -->
+      About Me
+    </h2>
+
+    <!-- Content Grid -->
+    <div class="about-grid">
+      <!-- Left — Text -->
+      <div class="about-text-block">
+        <p class="about-para">
+          I'm a <span class="highlight">Full-Stack Developer</span> based in Lahore, Pakistan, with
+          1+ year of professional experience building modern web applications from the ground up. I
+          enjoy working across the entire stack — from crafting pixel-perfect UIs to designing
+          scalable backend systems.
+        </p>
+        <p class="about-para">
+          Currently working as a <span class="highlight">Software Engineer</span> at Deep Cognitive
+          Solutions, where I develop and maintain full-stack applications using the MERN stack and
+          Next.js in a professional team environment.
+        </p>
+
+        <p class="about-para">
+          When I'm not coding, I'm exploring new technologies, contributing to side projects, or
+          sharpening my problem-solving skills. I believe in writing
+          <span class="highlight">clean, maintainable code</span> that scales well and delivers
+          great user experiences.
+        </p>
+
+        <!-- Skills -->
+        <div class="about-skills">
+          <p class="skills-label">Technologies I work with:</p>
+          <div class="skills-grid">
+            @for (skill of skills; track skill) {
+              <span class="skill-chip">
+                <span class="chip-arrow">▹</span>
+                {{ skill }}
+              </span>
+            }
+          </div>
+        </div>
+      </div>
+
+      <!-- Right — Stats + Card -->
+      <div class="about-right">
+        <!-- Glowing Card -->
+        <div class="about-card">
+          <div class="card-inner">
+            <div class="card-tag">&#x3C;developer&#x3E;</div>
+
+            <div class="card-content">
+              <div class="code-line">
+                <span class="code-key">name</span>
+                <span class="code-eq"> = </span>
+                <span class="code-val">"Muhammad Ibrahim"</span>
+              </div>
+              <div class="code-line">
+                <span class="code-key">role</span>
+                <span class="code-eq"> = </span>
+                <span class="code-val">"Full-Stack Developer"</span>
+              </div>
+              <div class="code-line">
+                <span class="code-key">location</span>
+                <span class="code-eq"> = </span>
+                <span class="code-val">"Lahore, Pakistan"</span>
+              </div>
+              <div class="code-line">
+                <span class="code-key">experience</span>
+                <span class="code-eq"> = </span>
+                <span class="code-val">"1+ years"</span>
+              </div>
+              <div class="code-line">
+                <span class="code-key">available</span>
+                <span class="code-eq"> = </span>
+                <span class="code-val code-bool">true</span>
+              </div>
+            </div>
+
+            <div class="card-tag">&#x3C;/developer&#x3E;</div>
+          </div>
+          <div class="card-glow"></div>
+        </div>
+
+        <!-- Stats -->
+        <div class="about-stats">
+          @for (stat of stats; track stat.label) {
+            <div class="stat-card">
+              <span class="stat-value">{{ stat.value }}</span>
+              <span class="stat-label">{{ stat.label }}</span>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
