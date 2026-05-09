@@ -6,6 +6,7 @@ import { SplashComponent } from './features/splash-component/splash-component';
 import { NavbarComponent } from './shared/components/navbar-component/navbar-component';
 import { HeroComponent } from './features/hero-component/hero-component';
 import { AboutComponent } from './features/about-component/about-component';
+import { ExperienceComponent } from './features/experience-component/experience-component';
 
 @Component({
   selector: 'app-root',
@@ -17,6 +18,7 @@ import { AboutComponent } from './features/about-component/about-component';
     NavbarComponent,
     HeroComponent,
     AboutComponent,
+    ExperienceComponent,
   ],
   templateUrl: './app.html',
   styleUrl: './app.scss',

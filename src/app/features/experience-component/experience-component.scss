@@ -1,0 +1,237 @@
+.exp-section {
+  padding: 100px 1.5rem;
+
+  @media (min-width: 768px) {
+    padding: 100px 3rem;
+  }
+
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Layout ── */
+.exp-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+
+  @media (min-width: 640px) {
+    grid-template-columns: 220px 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+}
+
+/* ── Tabs ── */
+.exp-tabs {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  border-bottom: 1px solid var(--color-border);
+  gap: 0;
+  padding-bottom: 0;
+
+  @media (min-width: 640px) {
+    flex-direction: column;
+    overflow-x: unset;
+    border-bottom: none;
+    border-left: 1px solid var(--color-border);
+  }
+
+  /* hide scrollbar on mobile */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.exp-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0.9rem 1.25rem;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  text-align: left;
+  white-space: nowrap;
+  position: relative;
+
+  @media (min-width: 640px) {
+    border-bottom: none;
+    border-left: 2px solid transparent;
+    white-space: normal;
+  }
+
+  &:hover {
+    background: rgba(100, 255, 218, 0.04);
+
+    .tab-company {
+      color: var(--color-primary);
+    }
+  }
+
+  &.active {
+    border-bottom-color: var(--color-primary);
+    background: rgba(100, 255, 218, 0.05);
+
+    @media (min-width: 640px) {
+      border-bottom-color: transparent;
+      border-left-color: var(--color-primary);
+    }
+
+    .tab-company {
+      color: var(--color-primary);
+    }
+  }
+}
+
+.tab-company {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+  transition: color 0.2s ease;
+  font-weight: 500;
+}
+
+.tab-duration {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.68rem;
+  color: var(--color-text-muted);
+  opacity: 0.6;
+  margin-top: 0.2rem;
+
+  @media (max-width: 639px) {
+    display: none;
+  }
+}
+
+/* ── Content ── */
+.exp-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  min-height: 250px;
+}
+
+/* Header */
+.exp-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.exp-role {
+  font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+  font-weight: 600;
+  color: var(--color-text);
+  line-height: 1.4;
+}
+
+.exp-at {
+  color: var(--color-primary);
+  margin: 0 0.3rem;
+  font-weight: 400;
+}
+
+.exp-company {
+  color: var(--color-primary);
+}
+
+.exp-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.exp-duration {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+}
+
+.exp-badge {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.68rem;
+  color: var(--color-primary);
+  border: 1px solid rgba(100, 255, 218, 0.25);
+  padding: 0.15rem 0.6rem;
+  border-radius: 9999px;
+}
+
+/* Points */
+.exp-points {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.exp-point {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  line-height: 1.75;
+
+  .point-arrow {
+    color: var(--color-primary);
+    font-size: 0.7rem;
+    margin-top: 0.35rem;
+    flex-shrink: 0;
+  }
+}
+
+/* Tech tags */
+.exp-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.exp-tech-tag {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.72rem;
+  color: var(--color-primary);
+  background: rgba(100, 255, 218, 0.06);
+  border: 1px solid rgba(100, 255, 218, 0.15);
+  padding: 0.25rem 0.7rem;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: rgba(100, 255, 218, 0.12);
+    border-color: rgba(100, 255, 218, 0.3);
+    transform: translateY(-2px);
+  }
+}
+
+/* ── Light mode ── */
+:global(.light-mode) {
+  .exp-tab {
+    &:hover {
+      background: rgba(8, 145, 178, 0.04);
+    }
+    &.active {
+      background: rgba(8, 145, 178, 0.05);
+    }
+  }
+
+  .exp-badge {
+    border-color: rgba(8, 145, 178, 0.25);
+  }
+
+  .exp-tech-tag {
+    background: rgba(8, 145, 178, 0.06);
+    border-color: rgba(8, 145, 178, 0.15);
+
+    &:hover {
+      background: rgba(8, 145, 178, 0.12);
+      border-color: rgba(8, 145, 178, 0.3);
+    }
+  }
+}

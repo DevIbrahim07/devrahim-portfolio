@@ -1,1 +1,52 @@
-<p>experience-component works!</p>
+<section id="experience" class="exp-section" #expSection>
+  <div class="section-container">
+    <!-- Heading -->
+    <h2 class="section-heading exp-heading">Experience</h2>
+
+    <!-- Layout -->
+    <div class="exp-layout">
+      <!-- Left Tabs -->
+      <div class="exp-tabs">
+        @for (exp of experiences; track exp.company; let i = $index) {
+          <button class="exp-tab" [class.active]="activeIndex === i" (click)="setActive(i)">
+            <span class="tab-company">{{ exp.company }}</span>
+            <span class="tab-duration">{{ exp.duration }}</span>
+          </button>
+        }
+      </div>
+
+      <!-- Right Content -->
+      <div class="exp-content">
+        <!-- Role + Company -->
+        <div class="exp-header">
+          <h3 class="exp-role">
+            {{ experiences[activeIndex].role }}
+            <span class="exp-at">@</span>
+            <span class="exp-company">{{ experiences[activeIndex].company }}</span>
+          </h3>
+          <div class="exp-meta">
+            <span class="exp-duration">{{ experiences[activeIndex].duration }}</span>
+            <span class="exp-badge">{{ experiences[activeIndex].type }}</span>
+          </div>
+        </div>
+
+        <!-- Points -->
+        <ul class="exp-points">
+          @for (point of experiences[activeIndex].points; track point) {
+            <li class="exp-point">
+              <span class="point-arrow">▹</span>
+              <span>{{ point }}</span>
+            </li>
+          }
+        </ul>
+
+        <!-- Tech Tags -->
+        <div class="exp-tech">
+          @for (tech of experiences[activeIndex].tech; track tech) {
+            <span class="exp-tech-tag">{{ tech }}</span>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
