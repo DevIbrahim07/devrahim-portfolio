@@ -1,6 +1,4 @@
-//@import 'tailwindcss';
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap');
+//@use 'tailwindcss';
 
 /* ─── CSS Variables for theming ─── */
 :root {
@@ -92,3 +90,62 @@ body {
 .light-mode {
   --grid-color: rgba(8, 145, 178, 0.07); /* was 0.04 */
 }
+
+// /* ── Driver.js Tour Styles ── */
+// .driver-popover.portfolio-tour-popover {
+//   background: rgba(15, 15, 26, 0.62) !important;
+//   border: 1px solid rgba(100, 255, 218, 0.16) !important;
+//   border-radius: 14px !important;
+//   backdrop-filter: blur(22px) saturate(170%) !important;
+//   -webkit-backdrop-filter: blur(22px) saturate(170%) !important;
+//   box-shadow:
+//     0 20px 60px rgba(0, 0, 0, 0.45),
+//     inset 0 1px 0 rgba(255, 255, 255, 0.04),
+//     0 0 40px rgba(100, 255, 218, 0.04) !important;
+//   padding: 1.5rem !important;
+//   max-width: 320px !important;
+// }
+
+// /* Arrow */
+// .driver-popover.portfolio-tour-popover .driver-popover-arrow-side-top::after {
+//   border-bottom-color: rgba(15, 15, 26, 0.62) !important;
+// }
+
+// .driver-popover.portfolio-tour-popover .driver-popover-arrow-side-bottom::after {
+//   border-top-color: rgba(15, 15, 26, 0.62) !important;
+// }
+
+// .driver-popover.portfolio-tour-popover .driver-popover-arrow-side-left::after {
+//   border-right-color: rgba(15, 15, 26, 0.62) !important;
+// }
+
+// .driver-popover.portfolio-tour-popover .driver-popover-arrow-side-right::after {
+//   border-left-color: rgba(15, 15, 26, 0.62) !important;
+// }
+
+// /* Light mode glass only */
+// .light-mode .driver-popover.portfolio-tour-popover {
+//   background: rgba(255, 255, 255, 0.28) !important;
+//   border: 1px solid rgba(255, 255, 255, 0.5) !important;
+//   backdrop-filter: blur(28px) saturate(180%) !important;
+//   -webkit-backdrop-filter: blur(28px) saturate(180%) !important;
+//   box-shadow:
+//     0 10px 30px rgba(15, 23, 42, 0.06),
+//     inset 0 1px 0 rgba(255, 255, 255, 0.72) !important;
+// }
+
+// .light-mode .driver-popover.portfolio-tour-popover .driver-popover-arrow-side-top::after {
+//   border-bottom-color: rgba(255, 255, 255, 0.28) !important;
+// }
+
+// .light-mode .driver-popover.portfolio-tour-popover .driver-popover-arrow-side-bottom::after {
+//   border-top-color: rgba(255, 255, 255, 0.28) !important;
+// }
+
+// .light-mode .driver-popover.portfolio-tour-popover .driver-popover-arrow-side-left::after {
+//   border-right-color: rgba(255, 255, 255, 0.28) !important;
+// }
+
+// .light-mode .driver-popover.portfolio-tour-popover .driver-popover-arrow-side-right::after {
+//   border-left-color: rgba(255, 255, 255, 0.28) !important;
+// }

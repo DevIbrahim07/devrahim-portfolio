@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { environment } from '../../../environments/environment';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -28,12 +29,12 @@ export class ContactComponent implements AfterViewInit {
   socials = [
     {
       label: 'GitHub',
-      url: 'https://github.com/ibrahim',
+      url: 'https://github.com/DevIbrahim07',
       icon: 'github',
     },
     {
       label: 'LinkedIn',
-      url: 'https://linkedin.com/in/ibrahim',
+      url: 'https://linkedin.com/in/DevIbrahim07',
       icon: 'linkedin',
     },
     {
@@ -108,7 +109,7 @@ export class ContactComponent implements AfterViewInit {
     this.submitStatus.set('idle');
 
     try {
-      const response = await fetch('http://localhost:3000/api/contact', {
+      const response = await fetch(`${environment.apiUrl}/contact`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(this.formData),

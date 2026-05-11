@@ -6,10 +6,12 @@ import {
   signal,
   ElementRef,
   ViewChild,
+  AfterViewInit,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { gsap } from 'gsap';
 import { ThemeService } from '../../../core/services/theme-service';
+// import { TourService } from '../../../core/services/tour.service';
 
 @Component({
   selector: 'app-navbar-component',
@@ -18,8 +20,9 @@ import { ThemeService } from '../../../core/services/theme-service';
   templateUrl: './navbar-component.html',
   styleUrl: './navbar-component.scss',
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent implements OnInit, AfterViewInit {
   theme = inject(ThemeService);
+  // tour = inject(TourService);
 
   isScrolled = signal(false);
   isMobileOpen = signal(false);
@@ -47,8 +50,13 @@ export class NavbarComponent implements OnInit {
       { y: -100, opacity: 0 },
       { y: 0, opacity: 1, duration: 1, ease: 'power3.out', delay: 2.5 },
     );
+    // Auto start tour on first visit
+    // this.tour.autoStartTour();
   }
-
+  // startTour() {
+  //   this.tour.resetTour();
+  //   this.tour.startTour();
+  // }
   scrollTo(href: string) {
     const el = document.querySelector(href);
     if (el) el.scrollIntoView({ behavior: 'smooth' });
