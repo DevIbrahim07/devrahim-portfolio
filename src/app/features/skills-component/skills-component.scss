@@ -1,0 +1,228 @@
+.skills-section {
+  padding: 100px 1.5rem;
+
+  @media (min-width: 768px) {
+    padding: 100px 3rem;
+  }
+
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Skills Grid ── */
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ── Category Card ── */
+.skill-category {
+  background: rgba(15, 15, 26, 0.7);
+  border: 1px solid rgba(100, 255, 218, 0.08);
+  border-radius: 14px;
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  transform-style: preserve-3d;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+
+  /* Top accent line */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--color-primary), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  &:hover {
+    border-color: rgba(100, 255, 218, 0.18);
+    box-shadow:
+      0 16px 40px rgba(0, 0, 0, 0.2),
+      0 0 30px rgba(100, 255, 218, 0.04);
+    transform: translateY(-4px);
+
+    &::before {
+      opacity: 1;
+    }
+  }
+}
+
+/* Category Header */
+.category-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(100, 255, 218, 0.06);
+}
+
+.category-icon {
+  font-size: 1.3rem;
+  line-height: 1;
+}
+
+.category-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-text);
+  font-family: 'Inter', sans-serif;
+}
+
+/* Skills List */
+.skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.skill-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.skill-name {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  transition: color 0.2s ease;
+
+  .skill-item:hover & {
+    color: var(--color-primary);
+  }
+}
+
+.skill-level {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.68rem;
+  color: var(--color-primary);
+  opacity: 0.7;
+}
+
+/* Progress bar */
+.skill-bar {
+  height: 3px;
+  background: rgba(100, 255, 218, 0.08);
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.skill-bar-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-primary-dark));
+  border-radius: 9999px;
+  position: relative;
+
+  /* Glowing tip */
+  &::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    box-shadow: 0 0 6px var(--color-primary);
+  }
+}
+
+/* ── Tech Pills ── */
+.tech-pills-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.tech-pills-label {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.tech-pills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+.tech-pill {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  border: 1px solid rgba(100, 255, 218, 0.12);
+  padding: 0.35rem 0.9rem;
+  border-radius: 9999px;
+  transition: all 0.25s ease;
+  cursor: default;
+
+  &:hover {
+    color: var(--color-primary);
+    border-color: rgba(100, 255, 218, 0.3);
+    background: rgba(100, 255, 218, 0.05);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(100, 255, 218, 0.1);
+  }
+}
+
+/* ── Light mode ── */
+:global(.light-mode) {
+  .skill-category {
+    background: rgba(255, 255, 255, 0.6);
+    border-color: rgba(8, 145, 178, 0.08);
+    backdrop-filter: blur(10px);
+
+    &::before {
+      background: linear-gradient(90deg, transparent, var(--color-primary), transparent);
+    }
+
+    &:hover {
+      border-color: rgba(8, 145, 178, 0.2);
+    }
+  }
+
+  .category-header {
+    border-bottom-color: rgba(8, 145, 178, 0.08);
+  }
+
+  .skill-bar {
+    background: rgba(8, 145, 178, 0.08);
+  }
+
+  .tech-pill {
+    border-color: rgba(8, 145, 178, 0.15);
+
+    &:hover {
+      border-color: rgba(8, 145, 178, 0.35);
+      background: rgba(8, 145, 178, 0.05);
+    }
+  }
+}
