@@ -1,12 +1,11 @@
 .projects-section {
   padding: 100px 1.5rem;
+  position: relative;
+  z-index: 1;
 
   @media (min-width: 768px) {
     padding: 100px 3rem;
   }
-
-  position: relative;
-  z-index: 1;
 }
 
 /* ── Featured Projects ── */
@@ -191,6 +190,7 @@
   &::before {
     right: calc(50% + 100px);
   }
+
   &::after {
     left: calc(50% + 100px);
   }
@@ -329,39 +329,65 @@
 }
 
 /* ── Light mode ── */
-:global(.light-mode) {
-  .project-card-featured {
-    background: rgba(255, 255, 255, 0.6);
-    border-color: rgba(8, 145, 178, 0.12);
+:host-context(.light-mode) .project-card-featured {
+  background: rgba(255, 255, 255, 0.38);
+  border-color: rgba(8, 145, 178, 0.12);
+  backdrop-filter: blur(16px) saturate(170%);
+  -webkit-backdrop-filter: blur(16px) saturate(170%);
+  box-shadow:
+    0 10px 28px rgba(15, 23, 42, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.82);
 
-    &:hover {
-      border-color: rgba(8, 145, 178, 0.25);
-    }
+  &:hover {
+    border-color: rgba(8, 145, 178, 0.24);
+    box-shadow:
+      0 16px 40px rgba(15, 23, 42, 0.1),
+      0 0 30px rgba(8, 145, 178, 0.06);
   }
+}
 
-  .project-card-small {
-    background: rgba(255, 255, 255, 0.6);
-    border-color: rgba(8, 145, 178, 0.08);
+:host-context(.light-mode) .project-card-small {
+  background: rgba(255, 255, 255, 0.32);
+  border-color: rgba(8, 145, 178, 0.1);
+  backdrop-filter: blur(14px) saturate(165%);
+  -webkit-backdrop-filter: blur(14px) saturate(165%);
+  box-shadow:
+    0 8px 24px rgba(15, 23, 42, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.75);
 
-    &:hover {
-      border-color: rgba(8, 145, 178, 0.2);
-    }
+  &:hover {
+    border-color: rgba(8, 145, 178, 0.2);
+    box-shadow: 0 14px 32px rgba(15, 23, 42, 0.08);
 
     &::before {
       background: linear-gradient(90deg, transparent, rgba(8, 145, 178, 0.3), transparent);
     }
   }
+}
 
-  .tech-tag {
-    background: rgba(8, 145, 178, 0.06);
-    border-color: rgba(8, 145, 178, 0.15);
-  }
+:host-context(.light-mode) .tech-tag {
+  background: rgba(8, 145, 178, 0.06);
+  border-color: rgba(8, 145, 178, 0.15);
 
-  .project-number {
-    color: rgba(8, 145, 178, 0.04);
+  &:hover {
+    background: rgba(8, 145, 178, 0.12);
   }
+}
 
-  .card-glow-bg {
-    background: radial-gradient(circle, rgba(8, 145, 178, 0.05) 0%, transparent 70%);
-  }
+:host-context(.light-mode) .project-number {
+  color: rgba(8, 145, 178, 0.05);
+}
+
+:host-context(.light-mode) .card-glow-bg {
+  background: radial-gradient(circle, rgba(8, 145, 178, 0.05) 0%, transparent 70%);
+}
+
+:host-context(.light-mode) .project-subtitle,
+:host-context(.light-mode) .project-desc,
+:host-context(.light-mode) .project-link,
+:host-context(.light-mode) .small-desc,
+:host-context(.light-mode) .small-tech-tag,
+:host-context(.light-mode) .icon-link,
+:host-context(.light-mode) .other-heading {
+  color: #475569;
 }

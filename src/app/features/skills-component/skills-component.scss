@@ -1,12 +1,11 @@
 .skills-section {
   padding: 100px 1.5rem;
+  position: relative;
+  z-index: 1;
 
   @media (min-width: 768px) {
     padding: 100px 3rem;
   }
-
-  position: relative;
-  z-index: 1;
 }
 
 /* ── Skills Grid ── */
@@ -39,7 +38,6 @@
   position: relative;
   overflow: hidden;
 
-  /* Top accent line */
   &::before {
     content: '';
     position: absolute;
@@ -138,7 +136,6 @@
   border-radius: 9999px;
   position: relative;
 
-  /* Glowing tip */
   &::after {
     content: '';
     position: absolute;
@@ -194,35 +191,47 @@
 }
 
 /* ── Light mode ── */
-:global(.light-mode) {
-  .skill-category {
-    background: rgba(255, 255, 255, 0.6);
-    border-color: rgba(8, 145, 178, 0.08);
-    backdrop-filter: blur(10px);
+:host-context(.light-mode) .skill-category {
+  background: rgba(255, 255, 255, 0.34);
+  border-color: rgba(8, 145, 178, 0.1);
+  backdrop-filter: blur(16px) saturate(170%);
+  -webkit-backdrop-filter: blur(16px) saturate(170%);
+  box-shadow:
+    0 10px 26px rgba(15, 23, 42, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
 
-    &::before {
-      background: linear-gradient(90deg, transparent, var(--color-primary), transparent);
-    }
-
-    &:hover {
-      border-color: rgba(8, 145, 178, 0.2);
-    }
+  &::before {
+    background: linear-gradient(90deg, transparent, var(--color-primary), transparent);
   }
 
-  .category-header {
-    border-bottom-color: rgba(8, 145, 178, 0.08);
+  &:hover {
+    border-color: rgba(8, 145, 178, 0.2);
+    box-shadow:
+      0 14px 30px rgba(15, 23, 42, 0.08),
+      0 0 24px rgba(8, 145, 178, 0.05);
   }
+}
 
-  .skill-bar {
-    background: rgba(8, 145, 178, 0.08);
-  }
+:host-context(.light-mode) .category-header {
+  border-bottom-color: rgba(8, 145, 178, 0.08);
+}
 
-  .tech-pill {
-    border-color: rgba(8, 145, 178, 0.15);
+:host-context(.light-mode) .skill-bar {
+  background: rgba(8, 145, 178, 0.08);
+}
 
-    &:hover {
-      border-color: rgba(8, 145, 178, 0.35);
-      background: rgba(8, 145, 178, 0.05);
-    }
+:host-context(.light-mode) .skill-name,
+:host-context(.light-mode) .tech-pills-label,
+:host-context(.light-mode) .tech-pill {
+  color: #475569;
+}
+
+:host-context(.light-mode) .tech-pill {
+  border-color: rgba(8, 145, 178, 0.15);
+
+  &:hover {
+    color: var(--color-primary);
+    border-color: rgba(8, 145, 178, 0.35);
+    background: rgba(8, 145, 178, 0.05);
   }
 }

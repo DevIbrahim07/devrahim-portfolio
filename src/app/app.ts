@@ -9,6 +9,7 @@ import { AboutComponent } from './features/about-component/about-component';
 import { ExperienceComponent } from './features/experience-component/experience-component';
 import { ProjectsComponent } from './features/projects-component/projects-component';
 import { SkillsComponent } from './features/skills-component/skills-component';
+import { ContactComponent } from './features/contact-component/contact-component';
 
 @Component({
   selector: 'app-root',
@@ -23,6 +24,7 @@ import { SkillsComponent } from './features/skills-component/skills-component';
     ExperienceComponent,
     ProjectsComponent,
     SkillsComponent,
+    ContactComponent,
   ],
   templateUrl: './app.html',
   styleUrl: './app.scss',

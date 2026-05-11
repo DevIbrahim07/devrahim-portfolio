@@ -1,12 +1,11 @@
 .exp-section {
   padding: 100px 1.5rem;
+  position: relative;
+  z-index: 1;
 
   @media (min-width: 768px) {
     padding: 100px 3rem;
   }
-
-  position: relative;
-  z-index: 1;
 }
 
 /* ── Layout ── */
@@ -38,7 +37,6 @@
     border-left: 1px solid var(--color-border);
   }
 
-  /* hide scrollbar on mobile */
   &::-webkit-scrollbar {
     display: none;
   }
@@ -211,27 +209,31 @@
 }
 
 /* ── Light mode ── */
-:global(.light-mode) {
-  .exp-tab {
-    &:hover {
-      background: rgba(8, 145, 178, 0.04);
-    }
-    &.active {
-      background: rgba(8, 145, 178, 0.05);
-    }
-  }
+:host-context(.light-mode) .exp-tab:hover {
+  background: rgba(8, 145, 178, 0.04);
+}
 
-  .exp-badge {
-    border-color: rgba(8, 145, 178, 0.25);
-  }
+:host-context(.light-mode) .exp-tab.active {
+  background: rgba(8, 145, 178, 0.05);
+}
 
-  .exp-tech-tag {
-    background: rgba(8, 145, 178, 0.06);
-    border-color: rgba(8, 145, 178, 0.15);
+:host-context(.light-mode) .exp-badge {
+  border-color: rgba(8, 145, 178, 0.25);
+}
 
-    &:hover {
-      background: rgba(8, 145, 178, 0.12);
-      border-color: rgba(8, 145, 178, 0.3);
-    }
+:host-context(.light-mode) .exp-tech-tag {
+  background: rgba(8, 145, 178, 0.06);
+  border-color: rgba(8, 145, 178, 0.15);
+
+  &:hover {
+    background: rgba(8, 145, 178, 0.12);
+    border-color: rgba(8, 145, 178, 0.3);
   }
+}
+
+:host-context(.light-mode) .tab-company,
+:host-context(.light-mode) .tab-duration,
+:host-context(.light-mode) .exp-duration,
+:host-context(.light-mode) .exp-point {
+  color: #475569;
 }

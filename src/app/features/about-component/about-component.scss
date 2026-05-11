@@ -1,20 +1,11 @@
-// .about-section {
-//   padding: 100px 1.5rem 100px;
-
-//   @media (min-width: 768px) {
-//     padding: 0px 3rem 100px;
-//   }
-
-//   position: relative;
-//   z-index: 1;
-// }
 .about-section {
   padding: 100px 1.5rem;
+  position: relative;
+  z-index: 1;
+
   @media (min-width: 768px) {
     padding: 100px 3rem;
   }
-  position: relative;
-  z-index: 1;
 }
 
 /* ── Grid Layout ── */
@@ -56,7 +47,6 @@
 .skills-label {
   font-family: 'Fira Code', monospace;
   font-size: 0.85rem;
-  //   color: var(--color-text-muted);
   margin-bottom: 1rem;
 }
 
@@ -84,7 +74,13 @@
     color: var(--color-primary);
   }
 }
+:host-context(.light-mode) .skill-chip {
+  color: #475569;
+}
 
+:host-context(.light-mode) .skill-chip:hover {
+  color: var(--color-primary);
+}
 /* ── Right Side ── */
 .about-right {
   display: flex;
@@ -97,6 +93,13 @@
   position: relative;
   border-radius: 12px;
   overflow: hidden;
+  transform-style: preserve-3d;
+  transition: box-shadow 0.3s ease;
+  cursor: default;
+
+  &:hover {
+    box-shadow: 0 20px 60px rgba(100, 255, 218, 0.1);
+  }
 }
 
 .card-inner {
@@ -107,6 +110,7 @@
   position: relative;
   z-index: 1;
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .card-tag {
@@ -139,12 +143,15 @@
 .code-key {
   color: #7ec8e3;
 }
+
 .code-eq {
   color: var(--color-text-muted);
 }
+
 .code-val {
   color: #c3e88d;
 }
+
 .code-bool {
   color: #f78c6c;
 }
@@ -166,6 +173,9 @@
 }
 
 .stat-card {
+  position: relative;
+  overflow: hidden;
+  transform-style: preserve-3d;
   background: rgba(15, 15, 26, 0.5);
   border: 1px solid rgba(100, 255, 218, 0.08);
   border-radius: 10px;
@@ -176,19 +186,66 @@
   gap: 0.35rem;
   transition: all 0.25s ease;
   backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 
   &:hover {
     border-color: rgba(100, 255, 218, 0.2);
     transform: translateY(-3px);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
   }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -75%;
+    width: 50%;
+    height: 200%;
+    background: linear-gradient(to right, transparent, rgba(100, 255, 218, 0.06), transparent);
+    transform: skewX(-20deg);
+    transition: none;
+  }
+
+  &:hover::before {
+    animation: shimmer 0.6s ease forwards;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 10px;
+    background: transparent;
+    border: 1px solid transparent;
+    transition: border-color 0.3s ease;
+  }
+
+  &:hover::after {
+    border-color: rgba(100, 255, 218, 0.25);
+    box-shadow: inset 0 0 20px rgba(100, 255, 218, 0.04);
+  }
+
+  &:hover .stat-value {
+    transform: scale(1.15) translateY(-2px);
+    text-shadow: 0 0 20px rgba(100, 255, 218, 0.5);
+  }
+
+  &:hover .stat-label {
+    transform: translateY(-2px);
+    color: var(--color-text);
+  }
 }
 
 .stat-value {
+  position: relative;
   font-size: 1.75rem;
   font-weight: 700;
   color: var(--color-primary);
   font-family: 'Inter', sans-serif;
+  display: inline-block;
+  transition:
+    transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+    text-shadow 0.3s ease;
 }
 
 .stat-label {
@@ -196,32 +253,40 @@
   font-size: 0.72rem;
   color: var(--color-text-muted);
   text-align: center;
+  display: inline-block;
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
 }
 
-/* ── Light mode ── */
-:global(.light-mode) {
-  .card-inner {
-    background: rgba(255, 255, 255, 0.6);
-    border-color: rgba(8, 145, 178, 0.15);
+.stat-card:hover .stat-value::after {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  border: 1px solid rgba(100, 255, 218, 0.2);
+  animation: pulseRing 1s ease-out forwards;
+}
+
+@keyframes shimmer {
+  0% {
+    left: -75%;
   }
 
-  .stat-card {
-    background: rgba(255, 255, 255, 0.6);
-    border-color: rgba(8, 145, 178, 0.1);
-  }
-
-  .card-tag {
-    color: rgba(8, 145, 178, 0.5);
+  100% {
+    left: 150%;
   }
 }
-/* ── 3D Card perspective ── */
-.about-card {
-  transform-style: preserve-3d;
-  transition: box-shadow 0.3s ease;
-  cursor: default;
 
-  &:hover {
-    box-shadow: 0 20px 60px rgba(100, 255, 218, 0.1);
+@keyframes pulseRing {
+  0% {
+    transform: scale(0.8);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1.8);
+    opacity: 0;
   }
 }
 
@@ -241,6 +306,7 @@
   top: 15%;
   left: 60%;
 }
+
 .p2 {
   width: 4px;
   height: 4px;
@@ -248,6 +314,7 @@
   top: 40%;
   right: 15%;
 }
+
 .p3 {
   width: 8px;
   height: 8px;
@@ -256,6 +323,7 @@
   left: 55%;
   opacity: 0.2;
 }
+
 .p4 {
   width: 5px;
   height: 5px;
@@ -264,113 +332,60 @@
   right: 20%;
   opacity: 0.3;
 }
-/* ── Enhanced Stat Card Animations ── */
-.stat-card {
-  position: relative;
-  overflow: hidden;
-  transform-style: preserve-3d;
 
-  /* Shimmer effect */
-  &::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -75%;
-    width: 50%;
-    height: 200%;
-    background: linear-gradient(to right, transparent, rgba(100, 255, 218, 0.06), transparent);
-    transform: skewX(-20deg);
-    transition: none;
-  }
-
-  &:hover::before {
-    animation: shimmer 0.6s ease forwards;
-  }
-
-  /* Glow border on hover */
-  &::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: 10px;
-    background: transparent;
-    border: 1px solid transparent;
-    transition: border-color 0.3s ease;
-  }
-
-  &:hover::after {
-    border-color: rgba(100, 255, 218, 0.25);
-    box-shadow: inset 0 0 20px rgba(100, 255, 218, 0.04);
-  }
-
-  /* Value pop on hover */
-  &:hover .stat-value {
-    transform: scale(1.15) translateY(-2px);
-    text-shadow: 0 0 20px rgba(100, 255, 218, 0.5);
-  }
-
-  /* Label slide up on hover */
-  &:hover .stat-label {
-    transform: translateY(-2px);
-    color: var(--color-text);
-  }
+/* ── Light mode ── */
+:host-context(.light-mode) .card-inner {
+  background: rgba(255, 255, 255, 0.36);
+  border-color: rgba(8, 145, 178, 0.14);
+  backdrop-filter: blur(16px) saturate(170%);
+  -webkit-backdrop-filter: blur(16px) saturate(170%);
+  box-shadow:
+    0 10px 28px rgba(15, 23, 42, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.85);
 }
 
-.stat-value {
-  transition:
-    transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
-    text-shadow 0.3s ease;
-  display: inline-block;
+:host-context(.light-mode) .stat-card {
+  background: rgba(255, 255, 255, 0.32);
+  border-color: rgba(8, 145, 178, 0.1);
+  backdrop-filter: blur(14px) saturate(165%);
+  -webkit-backdrop-filter: blur(14px) saturate(165%);
+  box-shadow:
+    0 8px 24px rgba(15, 23, 42, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.75);
 }
 
-.stat-label {
-  transition:
-    transform 0.3s ease,
-    color 0.3s ease;
-  display: inline-block;
+:host-context(.light-mode) .card-tag {
+  color: rgba(8, 145, 178, 0.58);
 }
 
-@keyframes shimmer {
-  0% {
-    left: -75%;
-  }
-  100% {
-    left: 150%;
-  }
+:host-context(.light-mode) .about-para,
+:host-context(.light-mode) .skill-chip,
+:host-context(.light-mode) .stat-label,
+:host-context(.light-mode) .code-eq,
+:host-context(.light-mode) .skills-label {
+  color: #475569;
 }
 
-/* ── Pulse ring on stat value ── */
-.stat-card:hover .stat-value::after {
-  content: '';
-  position: absolute;
-  inset: -8px;
-  border-radius: 50%;
-  border: 1px solid rgba(100, 255, 218, 0.2);
-  animation: pulseRing 1s ease-out forwards;
+:host-context(.light-mode) .code-key {
+  color: #0369a1;
 }
 
-.stat-value {
-  position: relative;
+:host-context(.light-mode) .code-val {
+  color: #15803d;
 }
 
-@keyframes pulseRing {
-  0% {
-    transform: scale(0.8);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1.8);
-    opacity: 0;
-  }
+:host-context(.light-mode) .code-bool {
+  color: #c2410c;
 }
 
-/* ── Light mode stat cards ── */
-:global(.light-mode) .stat-card {
-  &::before {
-    background: linear-gradient(to right, transparent, rgba(8, 145, 178, 0.06), transparent);
-  }
+:host-context(.light-mode) .stat-card::before {
+  background: linear-gradient(to right, transparent, rgba(8, 145, 178, 0.06), transparent);
+}
 
-  &:hover .stat-value {
-    text-shadow: 0 0 20px rgba(8, 145, 178, 0.4);
-  }
+:host-context(.light-mode) .stat-card:hover .stat-value {
+  text-shadow: 0 0 20px rgba(8, 145, 178, 0.35);
+}
+
+:host-context(.light-mode) .about-card:hover {
+  box-shadow: 0 18px 50px rgba(8, 145, 178, 0.08);
 }
