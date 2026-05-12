@@ -171,7 +171,7 @@ export class AboutComponent implements AfterViewInit {
       // Move glow with mouse
       gsap.to('.card-glow', {
         background: `radial-gradient(circle at ${x}px ${y}px,
-          rgba(100, 255, 218, 0.12), transparent 70%)`,
+          rgba(47, 121, 96, 0.12), transparent 70%)`,
         duration: 0.3,
       });
     });
@@ -184,7 +184,7 @@ export class AboutComponent implements AfterViewInit {
         ease: 'power3.out',
       });
       gsap.to('.card-glow', {
-        background: 'radial-gradient(circle at 50% 0%, rgba(100, 255, 218, 0.06), transparent 70%)',
+        background: 'radial-gradient(circle at 50% 0%, rgba(47, 121, 96, 0.06), transparent 70%)',
         duration: 0.4,
       });
     });

@@ -4,9 +4,9 @@
 
 /* ─── Tailwind v4 Custom Theme ─── */
 @theme {
-  --color-primary: #64ffda;
-  --color-primary-dark: #00b4d8;
-
+  // --color-primary: #64ffda;
+  --color-primary: #2f7960;
+  --color-primary-dark: #245e4b;
   --color-dark-900: #0a0a0f;
   --color-dark-800: #0f0f1a;
   --color-dark-700: #1a1a2e;
@@ -26,12 +26,13 @@
   --color-bg: #0a0a0f;
   --color-surface: #0f0f1a;
   --color-surface-2: #1a1a2e;
-  --color-border: rgba(100, 255, 218, 0.1);
+  --color-border: rgba(47, 121, 96, 0.1);
   --color-text: #ccd6f6;
   --color-text-muted: #8892b0;
-  --color-primary: #64ffda;
-  --color-primary-dark: #00b4d8;
-  --grid-color: rgba(100, 255, 218, 0.03);
+  // --color-primary: #64ffda;
+  --color-primary: #2f7960;
+  --color-primary-dark: #245e4b;
+  --grid-color: rgba(47, 121, 96, 0.03);
 }
 
 /* ─── Light Mode Variables ─── */
@@ -186,8 +187,8 @@ body {
   display: inline-block;
 
   &:hover {
-    background: rgba(100, 255, 218, 0.1);
-    box-shadow: 0 0 20px rgba(100, 255, 218, 0.15);
+    background: rgba(47, 121, 96, 0.1);
+    box-shadow: 0 0 20px rgba(47, 121, 96, 0.15);
   }
 }
 

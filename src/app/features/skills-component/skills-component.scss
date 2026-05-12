@@ -27,7 +27,7 @@
 /* ── Category Card ── */
 .skill-category {
   background: rgba(15, 15, 26, 0.7);
-  border: 1px solid rgba(100, 255, 218, 0.08);
+  border: 1px solid rgba(47, 121, 96, 0.08);
   border-radius: 14px;
   padding: 1.75rem;
   display: flex;
@@ -51,10 +51,10 @@
   }
 
   &:hover {
-    border-color: rgba(100, 255, 218, 0.18);
+    border-color: rgba(47, 121, 96, 0.18);
     box-shadow:
       0 16px 40px rgba(0, 0, 0, 0.2),
-      0 0 30px rgba(100, 255, 218, 0.04);
+      0 0 30px rgba(47, 121, 96, 0.04);
     transform: translateY(-4px);
 
     &::before {
@@ -69,7 +69,7 @@
   align-items: center;
   gap: 0.75rem;
   padding-bottom: 0.75rem;
-  border-bottom: 1px solid rgba(100, 255, 218, 0.06);
+  border-bottom: 1px solid rgba(47, 121, 96, 0.06);
 }
 
 .category-icon {
@@ -124,7 +124,7 @@
 /* Progress bar */
 .skill-bar {
   height: 3px;
-  background: rgba(100, 255, 218, 0.08);
+  background: rgba(47, 121, 96, 0.08);
   border-radius: 9999px;
   overflow: hidden;
 }
@@ -175,7 +175,7 @@
   font-family: 'Fira Code', monospace;
   font-size: 0.75rem;
   color: var(--color-text-muted);
-  border: 1px solid rgba(100, 255, 218, 0.12);
+  border: 1px solid rgba(47, 121, 96, 0.12);
   padding: 0.35rem 0.9rem;
   border-radius: 9999px;
   transition: all 0.25s ease;
@@ -183,17 +183,17 @@
 
   &:hover {
     color: var(--color-primary);
-    border-color: rgba(100, 255, 218, 0.3);
-    background: rgba(100, 255, 218, 0.05);
+    border-color: rgba(47, 121, 96, 0.3);
+    background: rgba(47, 121, 96, 0.05);
     transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(100, 255, 218, 0.1);
+    box-shadow: 0 6px 20px rgba(47, 121, 96, 0.1);
   }
 }
 
 /* ── Light mode ── */
 :host-context(.light-mode) .skill-category {
   background: rgba(255, 255, 255, 0.34);
-  border-color: rgba(8, 145, 178, 0.1);
+  border-color: rgba(47, 121, 96, 0.1);
   backdrop-filter: blur(16px) saturate(170%);
   -webkit-backdrop-filter: blur(16px) saturate(170%);
   box-shadow:
@@ -205,19 +205,19 @@
   }
 
   &:hover {
-    border-color: rgba(8, 145, 178, 0.2);
+    border-color: rgba(47, 121, 96, 0.2);
     box-shadow:
       0 14px 30px rgba(15, 23, 42, 0.08),
-      0 0 24px rgba(8, 145, 178, 0.05);
+      0 0 24px rgba(47, 121, 96, 0.05);
   }
 }
 
 :host-context(.light-mode) .category-header {
-  border-bottom-color: rgba(8, 145, 178, 0.08);
+  border-bottom-color: rgba(47, 121, 96, 0.08);
 }
 
 :host-context(.light-mode) .skill-bar {
-  background: rgba(8, 145, 178, 0.08);
+  background: rgba(47, 121, 96, 0.08);
 }
 
 :host-context(.light-mode) .skill-name,
@@ -227,11 +227,11 @@
 }
 
 :host-context(.light-mode) .tech-pill {
-  border-color: rgba(8, 145, 178, 0.15);
+  border-color: rgba(47, 121, 96, 0.15);
 
   &:hover {
     color: var(--color-primary);
-    border-color: rgba(8, 145, 178, 0.35);
-    background: rgba(8, 145, 178, 0.05);
+    border-color: rgba(47, 121, 96, 0.35);
+    background: rgba(47, 121, 96, 0.05);
   }
 }

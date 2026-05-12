@@ -2,7 +2,8 @@
 
 /* ─── CSS Variables for theming ─── */
 :root {
-  --color-primary: #64ffda;
+  // --color-primary: #64ffda;
+  --color-primary: #2f7960;
 
   --color-dark-900: #0a0a0f;
   --color-dark-800: #0f0f1a;
@@ -84,11 +85,11 @@ body {
   color: #0a0a0f;
 }
 :root {
-  --grid-color: rgba(100, 255, 218, 0.06); /* was 0.03 */
+  --grid-color: rgba(47, 121, 96, 0.06); /* was 0.03 */
 }
 
 .light-mode {
-  --grid-color: rgba(8, 145, 178, 0.07); /* was 0.04 */
+  --grid-color: rgba(47, 121, 96, 0.07); /* was 0.04 */
 }
 
 // /* ── Driver.js Tour Styles ── */

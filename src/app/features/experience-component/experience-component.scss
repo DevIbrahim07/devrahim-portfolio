@@ -63,7 +63,7 @@
   }
 
   &:hover {
-    background: rgba(100, 255, 218, 0.04);
+    background: rgba(47, 121, 96, 0.04);
 
     .tab-company {
       color: var(--color-primary);
@@ -72,7 +72,7 @@
 
   &.active {
     border-bottom-color: var(--color-primary);
-    background: rgba(100, 255, 218, 0.05);
+    background: rgba(47, 121, 96, 0.05);
 
     @media (min-width: 640px) {
       border-bottom-color: transparent;
@@ -154,7 +154,7 @@
   font-family: 'Fira Code', monospace;
   font-size: 0.68rem;
   color: var(--color-primary);
-  border: 1px solid rgba(100, 255, 218, 0.25);
+  border: 1px solid rgba(47, 121, 96, 0.25);
   padding: 0.15rem 0.6rem;
   border-radius: 9999px;
 }
@@ -195,39 +195,39 @@
   font-family: 'Fira Code', monospace;
   font-size: 0.72rem;
   color: var(--color-primary);
-  background: rgba(100, 255, 218, 0.06);
-  border: 1px solid rgba(100, 255, 218, 0.15);
+  background: rgba(47, 121, 96, 0.06);
+  border: 1px solid rgba(47, 121, 96, 0.15);
   padding: 0.25rem 0.7rem;
   border-radius: 4px;
   transition: all 0.2s ease;
 
   &:hover {
-    background: rgba(100, 255, 218, 0.12);
-    border-color: rgba(100, 255, 218, 0.3);
+    background: rgba(47, 121, 96, 0.12);
+    border-color: rgba(47, 121, 96, 0.3);
     transform: translateY(-2px);
   }
 }
 
 /* ── Light mode ── */
 :host-context(.light-mode) .exp-tab:hover {
-  background: rgba(8, 145, 178, 0.04);
+  background: rgba(47, 121, 96, 0.04);
 }
 
 :host-context(.light-mode) .exp-tab.active {
-  background: rgba(8, 145, 178, 0.05);
+  background: rgba(47, 121, 96, 0.05);
 }
 
 :host-context(.light-mode) .exp-badge {
-  border-color: rgba(8, 145, 178, 0.25);
+  border-color: rgba(47, 121, 96, 0.25);
 }
 
 :host-context(.light-mode) .exp-tech-tag {
-  background: rgba(8, 145, 178, 0.06);
-  border-color: rgba(8, 145, 178, 0.15);
+  background: rgba(47, 121, 96, 0.06);
+  border-color: rgba(47, 121, 96, 0.15);
 
   &:hover {
-    background: rgba(8, 145, 178, 0.12);
-    border-color: rgba(8, 145, 178, 0.3);
+    background: rgba(47, 121, 96, 0.12);
+    border-color: rgba(47, 121, 96, 0.3);
   }
 }
 

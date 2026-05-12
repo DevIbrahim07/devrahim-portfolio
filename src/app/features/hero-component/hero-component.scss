@@ -17,7 +17,7 @@
   transform: translate(-50%, -50%);
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, rgba(100, 255, 218, 0.06) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(47, 121, 96, 0.06) 0%, transparent 70%);
   border-radius: 50%;
   pointer-events: none;
   animation: glowPulse 4s ease-in-out infinite;
@@ -211,8 +211,8 @@
   transition: all 0.25s ease;
 
   &:hover {
-    background: rgba(100, 255, 218, 0.08);
-    box-shadow: 0 0 20px rgba(100, 255, 218, 0.15);
+    background: rgba(47, 121, 96, 0.08);
+    box-shadow: 0 0 20px rgba(47, 121, 96, 0.15);
     transform: translateY(-2px);
   }
 }
@@ -278,7 +278,7 @@
 
 /* ── Light mode adjustments ── */
 :host-context(.light-mode) .hero-glow {
-  background: radial-gradient(circle, rgba(8, 145, 178, 0.08) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(47, 121, 96, 0.08) 0%, transparent 70%);
 }
 
 :host-context(.light-mode) .hero-role,
@@ -301,6 +301,6 @@
   &:hover {
     border-color: var(--color-primary);
     color: var(--color-primary);
-    background: rgba(8, 145, 178, 0.04);
+    background: rgba(47, 121, 96, 0.04);
   }
 }
