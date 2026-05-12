@@ -251,6 +251,9 @@ export class ContactComponent implements AfterViewInit {
   }
 
   async onSubmit() {
+    console.log('Service ID:', environment.emailjs.serviceId);
+    console.log('Template ID:', environment.emailjs.templateId);
+    console.log('Public Key:', environment.emailjs.publicKey);
     if (!this.formData.name || !this.formData.email || !this.formData.message) return;
 
     this.isSubmitting.set(true);

@@ -8,6 +8,6 @@ export const environment = {
   emailjs: {
     serviceId: 'service_rgkalby',
     templateId: 'template_mcl14d9',
-    publicKey: 'daXbffwPt1nxFY-bb',
+    publicKey: 'rUuq5rE0om_FCE9xy',
   },
 };
