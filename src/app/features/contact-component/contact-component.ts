@@ -187,8 +187,8 @@ export class ContactComponent implements AfterViewInit {
   submitStatus = signal<'idle' | 'success' | 'error'>('idle');
 
   socials = [
-    { label: 'GitHub', url: 'https://github.com/ibrahim', icon: 'github' },
-    { label: 'LinkedIn', url: 'https://linkedin.com/in/ibrahim', icon: 'linkedin' },
+    { label: 'GitHub', url: 'https://github.com/devibrahim07', icon: 'github' },
+    { label: 'LinkedIn', url: 'https://linkedin.com/in/devibrahim07', icon: 'linkedin' },
     { label: 'Email', url: 'mailto:Dev.ibrahim0077@gmail.com', icon: 'email' },
   ];
 

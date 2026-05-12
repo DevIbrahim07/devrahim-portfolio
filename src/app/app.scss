@@ -123,6 +123,10 @@ body {
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 2rem;
+
+  @media (max-width: 640px) {
+    padding: 0 1rem;
+  }
 }
 
 .section-padding {
