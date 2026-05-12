@@ -2,6 +2,7 @@
   padding: 100px 1.5rem 0;
   position: relative;
   z-index: 1;
+  overflow-x: hidden;
 
   @media (min-width: 768px) {
     padding: 100px 3rem 0;
@@ -52,6 +53,7 @@
   display: flex;
   align-items: center;
   gap: 1rem;
+  min-width: 0;
 }
 
 .info-icon {
@@ -110,6 +112,8 @@
   display: flex;
   flex-direction: column;
   gap: 0.15rem;
+  min-width: 0;
+  flex: 1;
 }
 
 .info-label {
@@ -121,10 +125,14 @@
 }
 
 .info-value {
+  display: block;
+  max-width: 100%;
   font-size: 0.9rem;
   color: var(--color-text);
   text-decoration: none;
   transition: color 0.2s ease;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 
   &:hover {
     color: var(--color-primary);
