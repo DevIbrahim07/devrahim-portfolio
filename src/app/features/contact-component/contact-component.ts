@@ -167,7 +167,7 @@ import { environment } from '../../../environments/environment';
 gsap.registerPlugin(ScrollTrigger);
 
 @Component({
-  selector: 'app-contact',
+  selector: 'app-contact-component',
   standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './contact-component.html',
