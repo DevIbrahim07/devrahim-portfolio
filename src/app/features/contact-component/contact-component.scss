@@ -299,7 +299,7 @@
   font-weight: 600;
   padding: 0.9rem 2rem;
   border-radius: 8px;
-  background: linear-gradient(135deg, #2f7960, #245e4b);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
   color: #0a0a0f;
   border: none;
   cursor: pointer;

@@ -80,7 +80,7 @@
   font-family: 'Fira Code', monospace;
   font-size: 0.9rem;
   font-weight: 600;
-  color: #2e785f;
+  color: var(--color-primary);
 }
 
 .logo-dot {
@@ -191,7 +191,7 @@
   font-weight: 600;
   padding: 0.45rem 1.1rem;
   border-radius: 9999px;
-  background: linear-gradient(135deg, #2f7960, #245e4b);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
   color: #0a0a0f;
   cursor: pointer;
   transition: all 0.2s ease;

@@ -56,7 +56,7 @@
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #2f7960, #245e4b);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -174,7 +174,7 @@
   flex-direction: row-reverse;
 
   .msg-bubble {
-    background: linear-gradient(135deg, #2f7960, #245e4b);
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
     color: #0a0a0f;
     border-radius: 18px 18px 4px 18px;
   }
@@ -200,7 +200,7 @@
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #2f7960, #245e4b);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -348,7 +348,7 @@
   width: 36px;
   height: 36px;
   border-radius: 10px;
-  background: linear-gradient(135deg, #2f7960, #245e4b);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
   border: none;
   cursor: pointer;
   display: flex;
@@ -379,7 +379,7 @@
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #2f7960, #245e4b);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
   border: none;
   cursor: pointer;
   display: flex;
@@ -454,7 +454,7 @@
 :host-context(.light-mode) .msg-avatar,
 :host-context(.light-mode) .send-btn,
 :host-context(.light-mode) .chat-toggle-btn {
-  background: linear-gradient(135deg, #2f7960, #245e4b);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
 }
 
 :host-context(.light-mode) .assistant-message .msg-bubble {
